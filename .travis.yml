@@ -7,13 +7,20 @@ os:
   - osx
   - linux
   # - windows
-dist: xenial
+dist: trusty
 language: node_js
 node_js:
   - 12
 cache:
   - cargo
   - npm
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - gcc-6
+      - g++-6
 before_install:
   # Install Rust and Cargo
   - curl https://sh.rustup.rs -sSf > /tmp/rustup.sh
@@ -25,6 +32,9 @@ before_install:
   - cargo --version
   - node -v
   - npm -v
+  - ln -s /usr/bin/gcc-6 /usr/local/bin/gcc
+  - ln -s /usr/bin/g++-6 /usr/local/bin/g++
+  - gcc -v && g++ -v
   # Clone the rust-skia repo with the proper tag
   - git clone --depth 1 --branch $RUST_SKIA_TAG https://github.com/rust-skia/rust-skia.git ../rust-skia
   - npm install -g neon-cli
