@@ -3,7 +3,6 @@ branches:
     - /^v.*$/
 env:
   - RUST_SKIA_TAG="0.33.0"
-  - MATRIX_EVAL="CC=clang-5.0 && CXX=clang++-5.0"
 os:
   # - osx
   - linux
