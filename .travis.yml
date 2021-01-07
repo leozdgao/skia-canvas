@@ -3,13 +3,13 @@ branches:
     - /^v.*$/
 env:
   - RUST_SKIA_TAG="0.33.0"
+  - MATRIX_EVAL="CC=clang-5.0 && CXX=clang++-5.0"
 os:
-  - osx
+  # - osx
   - linux
   # - windows
 dist: trusty
 language: node_js
-compiler: gcc
 node_js:
   - 12
 cache:
@@ -19,9 +19,11 @@ addons:
   apt:
     sources:
       - ubuntu-toolchain-r-test
+      - llvm-toolchain-trusty-5.0
     packages:
       - gcc-6
       - g++-6
+      - clang-5.0
 before_install:
   # Install Rust and Cargo
   - curl https://sh.rustup.rs -sSf > /tmp/rustup.sh
@@ -36,6 +38,7 @@ before_install:
   - sudo ln -s /usr/bin/gcc-6 /usr/local/bin/gcc
   - sudo ln -s /usr/bin/g++-6 /usr/local/bin/g++
   - gcc -v && g++ -v
+  - eval "${MATRIX_EVAL}"
   # Clone the rust-skia repo with the proper tag
   - git clone --depth 1 --branch $RUST_SKIA_TAG https://github.com/rust-skia/rust-skia.git ../rust-skia
   - npm install -g neon-cli
