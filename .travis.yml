@@ -7,11 +7,10 @@ os:
   - osx
   - linux
   # - windows
-dist: precise
+dist: trusty
 language: node_js
 node_js:
-  - lts/*
-  - node
+  - 12
 cache:
   - cargo
   - npm
