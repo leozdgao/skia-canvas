@@ -7,7 +7,7 @@ os:
   - osx
   - linux
   # - windows
-dist: bionic
+dist: precise
 language: node_js
 node_js:
   - lts/*
