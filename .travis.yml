@@ -38,7 +38,6 @@ before_install:
   - sudo ln -s /usr/bin/gcc-6 /usr/local/bin/gcc
   - sudo ln -s /usr/bin/g++-6 /usr/local/bin/g++
   - gcc -v && g++ -v
-  - eval "${MATRIX_EVAL}"
   # Clone the rust-skia repo with the proper tag
   - git clone --depth 1 --branch $RUST_SKIA_TAG https://github.com/rust-skia/rust-skia.git ../rust-skia
   - npm install -g neon-cli
