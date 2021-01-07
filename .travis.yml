@@ -22,7 +22,7 @@ addons:
     packages:
       - gcc-6
       - g++-6
-      - clang-10.0
+      - clang-6.0
 before_install:
   # Install Rust and Cargo
   - curl https://sh.rustup.rs -sSf > /tmp/rustup.sh
