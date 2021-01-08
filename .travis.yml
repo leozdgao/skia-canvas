@@ -30,15 +30,15 @@ addons:
       - libobjc-4.9-dev
       - libclang-common-6.0-dev
       - libclang1-6.0
-matrix:
-    include:
-      - os: linux
-        addons:
-          apt:
-            sources:
-              - llvm-toolchain-trusty-6.0
-            packages:
-              - clang-6.0
+# matrix:
+#     include:
+#       - os: linux
+#         addons:
+#           apt:
+#             sources:
+#               - llvm-toolchain-trusty-6.0
+#             packages:
+#               - clang-6.0
 before_install:
   # Install Rust and Cargo
   - curl https://sh.rustup.rs -sSf > /tmp/rustup.sh
