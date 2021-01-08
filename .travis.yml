@@ -23,6 +23,7 @@ addons:
       - gcc-6
       - g++-6
       - clang-6.0
+      - libstdc++6
 before_install:
   # Install Rust and Cargo
   - curl https://sh.rustup.rs -sSf > /tmp/rustup.sh
@@ -30,6 +31,7 @@ before_install:
   - sh /tmp/rustup.sh -y
   - export PATH="$HOME/.cargo/bin:$PATH"
   - source "$HOME/.cargo/env" || true
+  - ldd --version
   - rustc --version
   - cargo --version
   - node -v
