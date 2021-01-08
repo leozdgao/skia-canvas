@@ -2,7 +2,7 @@ branches:
   only:
     - /^v.*$/
 env:
-  - RUST_SKIA_TAG="0.33.0"
+  - RUST_SKIA_TAG="0.33.0" CXX="clang-6.0"
 os:
   # - osx
   - linux
@@ -30,13 +30,13 @@ addons:
       - libobjc-4.9-dev
       - libclang-common-6.0-dev
       - libclang1-6.0
-matrix:
-    include:
-      - os: linux
-        env: 
-          - RUST_SKIA_TAG="0.33.0"
-          - CXX="clang-6.0"
-          - CXXFLAGS="-stdlib=libc++"
+# matrix:
+#     include:
+#       - os: linux
+#         env: 
+#           - RUST_SKIA_TAG="0.33.0"
+#           - CXX="clang-6.0"
+#           - CXXFLAGS="-stdlib=libc++"
 #         addons:
 #           apt:
 #             sources:
