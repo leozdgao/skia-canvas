@@ -3,6 +3,8 @@ branches:
     - /^v.*$/
 env:
   - RUST_SKIA_TAG="0.33.0"
+  - CXX="clang-6.0"
+  - CXXFLAGS="-stdlib=libc++"
 os:
   # - osx
   - linux
