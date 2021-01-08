@@ -24,7 +24,19 @@ addons:
       - g++-6
       - clang-6.0
       - libstdc++6
+matrix:
+    include:
+      - os: linux
+        addons:
+          apt:
+            sources:
+              - llvm-toolchain-trusty-6.0
+            packages:
+              - clang-6.0
+        env:
+          - MATRIX_EVAL="CC=clang-6.0 && CXX=clang++-6.0"
 before_install:
+  - eval "${MATRIX_EVAL}"
   # Install Rust and Cargo
   - curl https://sh.rustup.rs -sSf > /tmp/rustup.sh
   - if [ "$TRAVIS_OS_NAME" = "windows" ]; then export RUSTUP_OPTIONS="--default-host x86_64-pc-windows-msvc --default-toolchain stable-x86_64-pc-windows-msvc"; fi
