@@ -14,20 +14,32 @@ node_js:
 cache:
   - cargo
   - npm
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+      - llvm-toolchain-trusty-6.0
+    packages:
+      - gcc-6
+      - g++-6
+      - clang-6.0
+      - libstdc++6
+      - libllvm6.0
+      - libstdc++-4.9-dev
+      - libgcc-4.9-dev
+      - libobjc-4.9-dev
+      - libclang-common-6.0-dev
+      - libclang1-6.0
 matrix:
     include:
       - os: linux
         addons:
           apt:
             sources:
-              - ubuntu-toolchain-r-test
+              - llvm-toolchain-trusty-6.0
             packages:
-              - g++-6
-        env:
-          - MATRIX_EVAL="CC=gcc-6 && CXX=g++-6"
-          - RUST_SKIA_TAG="0.33.0"
+              - clang-6.0
 before_install:
-  - eval "${MATRIX_EVAL}"
   # Install Rust and Cargo
   - curl https://sh.rustup.rs -sSf > /tmp/rustup.sh
   - if [ "$TRAVIS_OS_NAME" = "windows" ]; then export RUSTUP_OPTIONS="--default-host x86_64-pc-windows-msvc --default-toolchain stable-x86_64-pc-windows-msvc"; fi
@@ -39,10 +51,10 @@ before_install:
   - cargo --version
   - node -v
   - npm -v
-  # - sudo ln -s /usr/bin/gcc-6 /usr/local/bin/gcc
-  # - sudo ln -s /usr/bin/g++-6 /usr/local/bin/g++
-  # - sudo ln -s /usr/bin/clang-6.0 /usr/local/bin/clang
-  # - sudo ln -s /usr/bin/clang-6.0 /usr/local/bin/c++
+  - sudo ln -s /usr/bin/gcc-6 /usr/local/bin/gcc
+  - sudo ln -s /usr/bin/g++-6 /usr/local/bin/g++
+  - sudo ln -s /usr/bin/clang-6.0 /usr/local/bin/clang
+  - sudo ln -s /usr/bin/clang-6.0 /usr/local/bin/c++
   - gcc -v && g++ -v
   - c++ -v
   # Clone the rust-skia repo with the proper tag
