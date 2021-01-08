@@ -36,6 +36,8 @@ before_install:
   - npm -v
   - sudo ln -s /usr/bin/gcc-6 /usr/local/bin/gcc
   - sudo ln -s /usr/bin/g++-6 /usr/local/bin/g++
+  - sudo ln -s /usr/bin/clang-6.0 /usr/local/bin/clang
+  - sudo ln -s /usr/bin/clang-6.0 /usr/local/bin/c++
   - gcc -v && g++ -v
   - c++ -v
   # Clone the rust-skia repo with the proper tag
