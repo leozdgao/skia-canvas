@@ -7,7 +7,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/samizdatco/skia-canvas.git"
+    "url": "git+https://github.com/leozdgao/skia-canvas.git"
   },
   "files": [
     "lib",
@@ -17,9 +17,9 @@
     "README.md"
   ],
   "bugs": {
-    "url": "https://github.com/samizdatco/skia-canvas/issues"
+    "url": "https://github.com/leozdgao/skia-canvas/issues"
   },
-  "homepage": "https://github.com/samizdatco/skia-canvas#readme",
+  "homepage": "https://github.com/leozdgao/skia-canvas#readme",
   "keywords": [
     "skia",
     "canvas",
