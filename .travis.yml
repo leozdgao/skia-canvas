@@ -2,7 +2,7 @@ branches:
   only:
     - /^v.*$/
 env:
-  - RUST_SKIA_TAG="0.33.0" CXX="clang-5.0"
+  - RUST_SKIA_TAG="0.33.0" CXX="clang-6.0 CPLUS_INCLUDE_PATH=/usr/local/clang-6.0.0/lib/clang/6.0.0/include"
 os:
   # - osx
   - linux
@@ -20,9 +20,9 @@ addons:
       - ubuntu-toolchain-r-test
       - llvm-toolchain-trusty-6.0
     packages:
+      - clang-6.0
       - gcc-6
       - g++-6
-      - clang-6.0
 # matrix:
 #     include:
 #       - os: linux
