@@ -2,7 +2,7 @@ branches:
   only:
     - /^v.*$/
 env:
-  - RUST_SKIA_TAG="0.33.0" CXX="clang-6.0"
+  - RUST_SKIA_TAG="0.33.0" CXX="clang-5.0"
 os:
   # - osx
   - linux
@@ -48,10 +48,10 @@ before_install:
   - cargo --version
   - node -v
   - npm -v
-  - sudo ln -s /usr/bin/gcc-6 /usr/local/bin/gcc
-  - sudo ln -s /usr/bin/g++-6 /usr/local/bin/g++
-  - sudo ln -s /usr/bin/clang-6.0 /usr/local/bin/clang
-  - sudo ln -s /usr/bin/clang-6.0 /usr/local/bin/c++
+  - sudo ln -s /usr/bin/gcc-5 /usr/local/bin/gcc
+  - sudo ln -s /usr/bin/g++-5 /usr/local/bin/g++
+  - sudo ln -s /usr/bin/clang-5.0 /usr/local/bin/clang
+  - sudo ln -s /usr/bin/clang-5.0 /usr/local/bin/c++
   - gcc -v && g++ -v
   - c++ -v
   # Clone the rust-skia repo with the proper tag
