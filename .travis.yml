@@ -18,11 +18,11 @@ addons:
   apt:
     sources:
       - ubuntu-toolchain-r-test
-      - llvm-toolchain-trusty-5.0
+      - llvm-toolchain-trusty-6.0
     packages:
-      - gcc-5
-      - g++-5
-      - clang-5.0
+      - gcc-6
+      - g++-6
+      - clang-6.0
 # matrix:
 #     include:
 #       - os: linux
@@ -48,10 +48,10 @@ before_install:
   - cargo --version
   - node -v
   - npm -v
-  - sudo ln -s /usr/bin/gcc-5 /usr/local/bin/gcc
-  - sudo ln -s /usr/bin/g++-5 /usr/local/bin/g++
-  - sudo ln -s /usr/bin/clang-5.0 /usr/local/bin/clang
-  - sudo ln -s /usr/bin/clang-5.0 /usr/local/bin/c++
+  - sudo ln -s /usr/bin/gcc-6 /usr/local/bin/gcc
+  - sudo ln -s /usr/bin/g++-6 /usr/local/bin/g++
+  - sudo ln -s /usr/bin/clang-6.0 /usr/local/bin/clang
+  - sudo ln -s /usr/bin/clang-6.0 /usr/local/bin/c++
   - gcc -v && g++ -v
   - c++ -v
   # Clone the rust-skia repo with the proper tag
