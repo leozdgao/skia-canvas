@@ -2,7 +2,7 @@ branches:
   only:
     - /^v.*$/
 env:
-  - RUST_SKIA_TAG="0.33.0" CXX="clang-6.0" CPLUS_INCLUDE_PATH="/usr/local/clang-6.0.0/lib/clang/6.0.0/include"
+  - RUST_SKIA_TAG="0.33.0" CXX="clang-6.0" CPLUS_INCLUDE_PATH="/usr/include/clang/6.0.1/include"
 os:
   # - osx
   - linux
