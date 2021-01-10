@@ -7,7 +7,7 @@ os:
   # - osx
   - linux
   # - windows
-dist: precise
+dist: trusty
 language: node_js
 node_js:
   - 12
