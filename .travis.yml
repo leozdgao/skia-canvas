@@ -37,6 +37,11 @@ addons:
 #             packages:
 #               - clang-6.0
 before_install:
+  # setup glic 2.17
+  - wget http://ftp.gnu.org/gnu/glibc/glibc-2.17.tar.gz
+  - tar -xvf glibc-2.17.tar.gz
+  - cd glibc-2.17 && ./configure --prefix=/usr --disable-profile --enable-add-ons --with-headers=/usr/include --with-binutils=/usr/bin && make && make install
+  - ll /lib64/libc*
   # Install Rust and Cargo
   - curl https://sh.rustup.rs -sSf > /tmp/rustup.sh
   - if [ "$TRAVIS_OS_NAME" = "windows" ]; then export RUSTUP_OPTIONS="--default-host x86_64-pc-windows-msvc --default-toolchain stable-x86_64-pc-windows-msvc"; fi
@@ -50,6 +55,7 @@ before_install:
   - cargo --version
   - node -v
   - npm -v
+  # Setup clang/llvm
   - sudo ln -s /usr/bin/gcc-6 /usr/local/bin/gcc
   - sudo ln -s /usr/bin/g++-6 /usr/local/bin/g++
   - sudo ln -s /usr/bin/clang-6.0 /usr/local/bin/clang
