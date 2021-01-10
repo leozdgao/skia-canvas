@@ -23,7 +23,6 @@ addons:
       - clang-6.0
       - gcc-6
       - g++-6
-      - glibc=2.17
 # matrix:
 #     include:
 #       - os: linux
@@ -43,6 +42,7 @@ before_install:
   # - tar -xvf glibc-2.17.tar.gz && mkdir glic-build-2.17
   # - cd glic-build-2.17 && ../glibc-2.17/configure --prefix=/usr --disable-profile --enable-add-ons --with-headers=/usr/include --with-binutils=/usr/bin && make && make install
   # - ll /lib64/libc*
+  - sudo apt-get -y install glic=2.17
   # Install Rust and Cargo
   - curl https://sh.rustup.rs -sSf > /tmp/rustup.sh
   - if [ "$TRAVIS_OS_NAME" = "windows" ]; then export RUSTUP_OPTIONS="--default-host x86_64-pc-windows-msvc --default-toolchain stable-x86_64-pc-windows-msvc"; fi
