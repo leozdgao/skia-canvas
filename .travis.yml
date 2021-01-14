@@ -68,7 +68,7 @@ before_install:
 install:
   # - travis_wait 25 npm ci
 script:
-  - docker container run -it leozdgao/centos7_skia_canvas_build
+  - docker container run -it --env NODE_PRE_GYP_GITHUB_TOKEN=$NODE_PRE_GYP_GITHUB_TOKEN leozdgao/centos7_skia_canvas_build
   # - npm test
   # - npm run package
   # - if [ -n "$TRAVIS_TAG" ]; then npm run upload-binary || exit 0; fi
