@@ -40,7 +40,8 @@
     "install": "node-pre-gyp install --fallback-to-build=false || npm run build",
     "package": "npm run build && rm -rf native/target && node-pre-gyp package",
     "upload-binary": "node-pre-gyp-github publish",
-    "test": "jest"
+    "test": "jest",
+    "travis": "git push origin :refs/tags/v0.9.19 && git tag -d v0.9.19 && git tag v0.9.19 && git push --tags"
   },
   "binary": {
     "module_name": "index",
