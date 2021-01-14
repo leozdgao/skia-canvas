@@ -39,7 +39,7 @@ services:
 #             packages:
 #               - clang-6.0
 before_install:
-  - docker pull leozdgao/centos7_skia_canvas_build
+  - docker pull leozdgao/centos7_skia_canvas_build:latest
   # Install Rust and Cargo
   # - curl https://sh.rustup.rs -sSf > /tmp/rustup.sh
   # - if [ "$TRAVIS_OS_NAME" = "windows" ]; then export RUSTUP_OPTIONS="--default-host x86_64-pc-windows-msvc --default-toolchain stable-x86_64-pc-windows-msvc"; fi
