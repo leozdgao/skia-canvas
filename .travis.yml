@@ -39,7 +39,7 @@ services:
 #             packages:
 #               - clang-6.0
 before_install:
-  - docker pull leozdgao/centos7_skia_canvas_build:latest
+  - docker pull leozdgao/centos7_skia_build:latest
   # Install Rust and Cargo
   # - curl https://sh.rustup.rs -sSf > /tmp/rustup.sh
   # - if [ "$TRAVIS_OS_NAME" = "windows" ]; then export RUSTUP_OPTIONS="--default-host x86_64-pc-windows-msvc --default-toolchain stable-x86_64-pc-windows-msvc"; fi
@@ -68,7 +68,7 @@ before_install:
 install:
   # - travis_wait 25 npm ci
 script:
-  - docker container run -it leozdgao/centos7_skia_canvas_build
+  - docker container run -it leozdgao/centos7_skia_build
   # - npm test
   # - npm run package
   # - if [ -n "$TRAVIS_TAG" ]; then npm run upload-binary || exit 0; fi
