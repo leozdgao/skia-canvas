@@ -3,8 +3,8 @@ _arc
 .vscode
 native/artifacts.json
 native/target
-native/*.node
-
+# native/*.node
+node_modules
 test/assets
 
 scr[ia]bble.*

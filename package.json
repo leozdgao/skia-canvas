@@ -37,7 +37,6 @@
   ],
   "scripts": {
     "build": "neon build --release",
-    "install": "node-pre-gyp install --fallback-to-build=false || npm run build",
     "package": "npm run build && rm -rf native/target && node-pre-gyp package",
     "upload-binary": "node-pre-gyp-github publish",
     "test": "jest",
